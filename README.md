@@ -21,10 +21,10 @@ Before you begin, ensure you have the following installed:
 1. **Clone the Repository**
    Clone the repository to your local machine using the following command:
 
-git clone https://github.com/yourusername/text-enhancer-tool.git
+   git clone https://github.com/yourusername/text-enhancer-tool.git
 
-Navigate to the project directory:
-cd text-enhancer-tool
+   Navigate to the project directory:
+      cd text-enhancer-tool
 
 2. **Install Dependencies**
 Install all the required dependencies: npm install
