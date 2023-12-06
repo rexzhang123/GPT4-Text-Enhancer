@@ -34,8 +34,6 @@ Install all the required dependencies: npm install
 Start the application by running:
 npm start
 
-markdown
-Copy code
 Access the tool in your browser at `http://localhost:3000`.
 
 ## Usage Guide
@@ -49,18 +47,12 @@ We warmly welcome contributions from the community. To contribute:
 2. **Create a Feature Branch**: 
 git checkout -b feature-YourFeatureName
 
-markdown
-Copy code
 3. **Commit Your Changes**: 
 git commit -am 'Add a fantastic feature'
 
-markdown
-Copy code
 4. **Push to the Branch**: 
 git push origin feature-YourFeatureName
 
-csharp
-Copy code
 5. **Open a Pull Request**: Navigate back to your fork on GitHub and open a pull request.
 
 ## Feedback and Support
