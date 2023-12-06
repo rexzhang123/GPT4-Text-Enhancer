@@ -35,6 +35,9 @@ Before you begin, ensure you have the following installed:
        npm install
 
 ### Running the Application
+
+   First, insert your OpenAI API key in .env.
+   
    Start the application by running:
     
     npm start
