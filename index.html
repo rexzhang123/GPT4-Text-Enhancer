@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta charset: Sets the character encoding for the HTML document -->
+    <meta charset="UTF-8" />
+
+    <!-- Title: Defines the title of the document, shown in browser tab -->
+    <title>Text Enhancer Tool</title>
+
+    <!-- Quill CSS: Link to the Quill rich text editor's default stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+
+    <!-- Quill JS: Script tag to include the Quill rich text editor JavaScript library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <!-- Custom Stylesheet: Link to your custom CSS file for styling your application -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Fonts: Link to Google Fonts for the 'Orbitron' font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome: Link to the FontAwesome stylesheet for using icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Text Enhancer Tool</h1> <!-- Title for the tool -->
+      <button id="infoButton" class="info-button"><i class="fas fa-info-circle"></i></button>
+    </header>
+    <div class="container">
+      
+      <div id="editor-container">
+       
+        <div id="editor">
+          <!-- Quill editor content will go here -->
+        </div>
+      </div>
+
+
+      <!-- Daemon buttons and styling buttons -->
+      <div id="toolbar">
+       
+        <!-- adds tooltip so that when you hover, it shows an introduction of each daemon -->
+        <button id="myButton" data-tooltip="Translates text into selected languages (English, Spanish, French, Chinese).">Translation</button>
+        <button id="keyInfoHighlighter" data-tooltip="Highlights key information in the text (nouns in pink, verbs in orange, dates and number in purple, phrases in yellow).">Key Info Highlighter</button>
+        <button id="readabilityChecker" data-tooltip="Checks the text for readability issues and suggests alternatives.">Readability Check</button>
+        <button id="toneSelectionButton" data-tooltip="Adjusts the text to different tones or styles, like formal, casual, or academic.">Tone/Style Change</button>
+        <button id="unhighlightButton">Unhighlight All Text</button>
+
+        <span>
+          <button class="ql-bold"></button>
+          <button class="ql-italic"></button>
+        </span>
+        
+        <select class="ql-font"></select>
+        <select class="ql-size"></select>
+        <span>
+          <select class="ql-color"></select>
+        </span>
+        <span>
+          <select class="ql-background"></select>
+        </span>
+        
+      </div>
+
+      <!-- Language Selection Modal Preview Window-->
+      <div id="languageModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Select Language</h2>
+          <select id="languageSelect">
+            <option value="Chinese">Chinese</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+            <option value="English">English</option>
+            <!-- Add more languages as needed -->
+          </select>
+          <button id="translateButton">Translate</button>
+        </div>
+      </div>
+
+      <!-- Translation Preview Modal Preview Window-->
+      <div id="previewModal" class="modal">
+        <div class="modal-content">
+          <span class="close-preview">&times;</span>
+          <h2>Translation Preview</h2>
+          <div id="translationPreview"></div>
+          <button id="acceptTranslation" class="accept-btn">Accept</button>
+          <button id="skipTranslation" class="cancel-btn">Skip</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text Tone Preview Modal Structure Preview Window-->
+      <div id="textTonePreviewModal" class="modal text-tone-modal">
+        <div class="modal-content text-tone-modal-content">
+            <span class="close text-tone-close">&times;</span>
+            <h2>Preview Changed Tone</h2>
+            <div id="textTonePreviewContent" class="text-tone-preview-content" style="white-space: pre-wrap;"></div>
+            <button id="textToneAcceptChange" class="accept-btn">Accept</button>
+            <button id="textToneCancelChange" class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Information Modal Window when clicking on the exclamation mark next the title-->
+      <div id="infoModal" class="modal">
+        <div class="modal-content">
+          <span class="close-info">&times;</span>
+          <h2>About Text Enhancer Tool</h2>
+          <p class="modal-text">
+            The Text Enhancer Tool is powered by ChatGPT and designed to improve your writing by providing functionalities like translation, key information highlighting, readability checking, and tone adjustments. Try it out! If you have experienced any difficulties or negativities, please send an email to rex.zhang@emory.edu or louis.lu@emory.edu. Our technical staff are friendly and professional!
+          </p>
+          <h3>Data Privacy</h3>
+          <p class="modal-text">
+            We respect your privacy and are strongly committed to keeping secure any information we obtain from you. We will not collect and store any of your data when you use our tool except for processnig your text input to generate responses.
+          </p>
+        </div>
+      </div>
+
+      
+
+      <!-- Links to javascript files -->
+    <script src="translation.js"></script>
+    <script src="highlight.js"></script>
+    <script src="readability.js"></script>
+    <script src="tone.js"></script>
+  </body>
+</html>
